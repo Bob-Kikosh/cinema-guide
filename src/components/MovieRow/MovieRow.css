@@ -1,0 +1,116 @@
+.movie-row {
+  margin-top: 40px;
+}
+
+.movie-row__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.movie-row__title {
+  margin: 0;
+  font-size: 22px;
+}
+
+.movie-row__link {
+  font-size: 14px;
+  color: var(--color-muted);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.movie-row__link:hover {
+  color: var(--color-accent);
+}
+
+.movie-row__body {
+  position: relative;
+  /* Let the track reach the screen edges while the title stays aligned */
+  margin: 0 calc(var(--page-padding) * -1);
+}
+
+.movie-row__track {
+  display: flex;
+  gap: 16px;
+  padding: 12px var(--page-padding) 8px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-padding: 0 var(--page-padding);
+  scrollbar-width: none;
+}
+
+.movie-row__track::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-row__item {
+  flex: 0 0 180px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.movie-row__arrow {
+  position: absolute;
+  top: 12px;
+  /* Poster height only: the title below is not covered */
+  bottom: 40px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--page-padding);
+  min-width: 36px;
+  padding: 0;
+  color: var(--color-text);
+  background: rgba(10, 10, 14, 0.7);
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.25s ease, background 0.25s ease;
+}
+
+.movie-row__arrow--prev {
+  left: 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.movie-row__arrow--next {
+  right: 0;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.movie-row__body:hover .movie-row__arrow,
+.movie-row__arrow:focus-visible {
+  opacity: 1;
+}
+
+.movie-row__arrow:hover {
+  background: var(--color-accent);
+}
+
+@media (hover: none) {
+  .movie-row__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-row {
+    margin-top: 28px;
+  }
+
+  .movie-row__title {
+    font-size: 18px;
+  }
+
+  .movie-row__track {
+    gap: 12px;
+  }
+
+  .movie-row__item {
+    flex-basis: 132px;
+  }
+}

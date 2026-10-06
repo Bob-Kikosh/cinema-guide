@@ -1,0 +1,27 @@
+.skeleton {
+  background: linear-gradient(90deg, #1f1f25 25%, #2c2c34 50%, #1f1f25 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.4s linear infinite;
+}
+
+.skeleton-card__poster {
+  aspect-ratio: 2 / 3;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-card__title {
+  width: 70%;
+  height: 14px;
+  margin-top: 12px;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
