@@ -18,6 +18,18 @@ function TrailerModal({ title, youTubeId, onClose }: Props) {
           allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
         />
       </div>
+      {/* The player stays empty when YouTube is unreachable, so a direct link is always offered */}
+      <p className="trailer__fallback">
+        Player not loading?{" "}
+        <a
+          className="trailer__link"
+          href={`https://www.youtube.com/watch?v=${encodeURIComponent(youTubeId)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch on YouTube
+        </a>
+      </p>
     </Modal>
   );
 }
