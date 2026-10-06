@@ -2,7 +2,7 @@
 
 A movie catalog built with React and TypeScript. Browse movies by genre, search the catalog, watch trailers and keep a list of favorites in your account.
 
-<!-- After publishing on GitHub Pages, put the link here: **[Live demo](https://USERNAME.github.io/cinema-guide/)** -->
+**[Live demo](https://bob-kikosh.github.io/cinema-guide/)**
 
 ![Home page](docs/home.png)
 
